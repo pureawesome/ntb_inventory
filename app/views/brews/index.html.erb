@@ -1,0 +1,24 @@
+<h1>brews</h1>
+
+<%= link_to('Log a Brew', new_brew_path) %>
+
+<table class="display" id="brews">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Product</td>
+      <td><%= Brew.human_attribute_name(:amount) %></td>
+      <td><%= Brew.human_attribute_name(:date) %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @brews.each do |b| %>
+      <tr>
+        <td><%= link_to b.id, b %></td>
+        <td><%= b.product.name %></td>
+        <td><%= b.amount %></td>
+        <td><%= b.date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

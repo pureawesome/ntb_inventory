@@ -1,0 +1,21 @@
+<h1>products</h1>
+
+<%= link_to('Add a product', new_product_path) %>
+
+<table class="display" id="products">
+  <thead>
+    <tr>
+      <td><%= Product.human_attribute_name(:name) %></td>
+      <td><%= Product.human_attribute_name(:sku) %></td>
+    </tr>
+  </thead>
+  <tbody>
+
+    <% @products.each do |p| %>
+      <tr>
+        <td><%= link_to p.name, p %></td>
+        <td><%= p.sku %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

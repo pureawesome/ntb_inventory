@@ -1,0 +1,21 @@
+<h1>Sale <%= @sale.id %></h1>
+
+<p>
+  <strong>product:</strong>
+  <%= @sale.product.name %>
+</p>
+<p>
+  <strong>Amount:</strong>
+  <%= @sale.amount %>
+</p>
+<p>
+  <strong>Date:</strong>
+  <%= @sale.date %>
+</p>
+<p>
+  <strong>Comments:</strong>
+  <%= @sale.description %>
+</p>
+
+<p><%= link_to('Edit Sale', edit_brew_path(@sale)) %></p>
+<p><%= link_to('All Sales', sales_path) %></p>

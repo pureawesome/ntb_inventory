@@ -1,0 +1,24 @@
+<h1>sales</h1>
+
+<%= link_to('Log a Sale', new_sale_path) %>
+
+<table class="display" id="sales">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Product</td>
+      <td><%= Sale.human_attribute_name(:amount) %></td>
+      <td><%= Sale.human_attribute_name(:date) %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sales.each do |b| %>
+      <tr>
+        <td><%= link_to b.id, b %></td>
+        <td><%= b.product.name %></td>
+        <td><%= b.amount %></td>
+        <td><%= b.date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

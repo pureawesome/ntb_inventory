@@ -1,0 +1,16 @@
+<%= form_for @product do |f| %>
+  <%= render 'shared/errors', object: @product %>
+  <fieldset>
+    <div class="field form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name  %>
+    </div>
+    <div class="field form-group">
+      <%= f.label :sku %>
+      <%= f.text_field :sku  %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </fieldset>
+<% end %>
