@@ -36,7 +36,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bootstrap',     '~> 4.0.0.beta'
 # gem 'material-sass', '~> 4.0.0.beta'
 # gem 'jquery-rails'
-gem 'gentelella-rails'
+# gem 'gentelella-rails'
+gem 'jquery-rails'
+gem 'materialize-sass'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

@@ -1,5 +1,5 @@
 class Brew < ApplicationRecord
   belongs_to :product
 
-  validates :amount, presence: true
+  validates :amount_full, presence: true
 end

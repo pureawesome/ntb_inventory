@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 20171117184832) do
   enable_extension "plpgsql"
 
   create_table "brews", force: :cascade do |t|
-    t.integer "amount"
+    t.integer "amount_full"
+    t.integer "amount_sample"
     t.text "description"
     t.bigint "product_id"
     t.datetime "date"
@@ -33,7 +34,9 @@ ActiveRecord::Schema.define(version: 20171117184832) do
   end
 
   create_table "sales", force: :cascade do |t|
-    t.integer "amount"
+    t.integer "amount_full"
+    t.integer "amount_sample"
+    t.boolean "paid"
     t.text "description"
     t.bigint "product_id"
     t.datetime "date"

@@ -10,28 +10,34 @@ class HomeController < ApplicationController
   private
 
   def get_inventory(product)
-    brewed = get_brewed(product.id)
-    sold = get_sold(product.id)
+    brewed_f = get_brewed(product.id, :amount_full)
+    sold_f = get_sold(product.id, :amount_full)
+    brewed_s = get_brewed(product.id, :amount_sample)
+    sold_s = get_sold(product.id, :amount_sample)
     item = {
       name: product.name,
-      brewed: brewed,
-      sold: sold,
-      total: brewed - sold
+      id: product.id,
+      brewed_full: brewed_f,
+      sold_full: sold_f,
+      total_full: brewed_f - sold_f,
+      brewed_sample: brewed_s,
+      sold_sample: sold_s,
+      total_sample: brewed_s - sold_s
     }
     item
   end
 
-  def get_brewed(id)
+  def get_brewed(id, col)
     Brew.where(product_id: id)
-        .select(:amount)
-        .map(&:amount)
+        .select(col)
+        .map{|d| d[col]}
         .inject(:+)
   end
 
-  def get_sold(id)
+  def get_sold(id, col)
     Sale.where(product_id: id)
-        .select(:amount)
-        .map(&:amount)
+        .select(col)
+        .map{|d| d[col]}
         .inject(:+)
   end
 end

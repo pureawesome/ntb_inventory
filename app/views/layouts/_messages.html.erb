@@ -1,0 +1,7 @@
+<% flash.each do |k, v| %>
+  <% if v.is_a?(String) %>
+    <div id="card-alert" role="alert" class="card alert alert-dismissible lighten-5 <%= flash_class(k) %>">
+      <%= content_tag :div, v %>
+    </div>
+  <% end %>
+<% end %>

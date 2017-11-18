@@ -1,24 +1,32 @@
 <%= form_for @sale do |f| %>
   <%= render 'shared/errors', object: @sale %>
   <fieldset>
-    <div class="field form-group">
+    <div>
       <%= f.label :product_id %>
       <%= f.select :product_id, Product.all.map {|p| [p.name, p.id]} %>
     </div>
-    <div class="field form-group">
-      <%= f.label :amount %>
-      <%= f.number_field(:amount, in: 1.0..100.0, step: 1.0) %>
+    <div>
+      <%= f.label :amount_full %>
+      <%= f.number_field(:amount_full, in: 1.0..100.0, step: 1.0) %>
     </div>
-    <div class="field form-group">
+    <div>
+      <%= f.label :amount_sample %>
+      <%= f.number_field(:amount_sample, in: 1.0..100.0, step: 1.0) %>
+    </div>
+    <p>
+      <%= f.check_box :paid %>
+      <%= f.label :paid %>
+    </p>
+    <div>
       <%= f.label :date %>
       <%= f.datetime_field :date %>
     </div>
-    <div class="field form-group">
+    <div>
       <%= f.label :description %>
       <%= f.text_area :description %>
     </div>
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit class: "btn" %>
     </div>
   </fieldset>
 <% end %>

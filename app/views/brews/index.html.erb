@@ -1,13 +1,14 @@
 <h1>brews</h1>
 
-<%= link_to('Log a Brew', new_brew_path) %>
+<%= link_to('Log a Brew', new_brew_path, class: "btn") %>
 
 <table class="display" id="brews">
   <thead>
     <tr>
       <td>ID</td>
       <td>Product</td>
-      <td><%= Brew.human_attribute_name(:amount) %></td>
+      <td><%= Brew.human_attribute_name(:amount_full) %></td>
+      <td><%= Brew.human_attribute_name(:amount_sample) %></td>
       <td><%= Brew.human_attribute_name(:date) %></td>
     </tr>
   </thead>
@@ -16,7 +17,8 @@
       <tr>
         <td><%= link_to b.id, b %></td>
         <td><%= b.product.name %></td>
-        <td><%= b.amount %></td>
+        <td><%= b.amount_full %></td>
+        <td><%= b.amount_sample %></td>
         <td><%= b.date %></td>
       </tr>
     <% end %>

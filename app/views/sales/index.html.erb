@@ -1,13 +1,15 @@
 <h1>sales</h1>
 
-<%= link_to('Log a Sale', new_sale_path) %>
+<%= link_to('Log a Sale', new_sale_path, class: "btn") %>
 
 <table class="display" id="sales">
   <thead>
     <tr>
       <td>ID</td>
       <td>Product</td>
-      <td><%= Sale.human_attribute_name(:amount) %></td>
+      <td><%= Sale.human_attribute_name(:amount_full) %></td>
+      <td><%= Sale.human_attribute_name(:amount_sample) %></td>
+      <td>Paid?</td>
       <td><%= Sale.human_attribute_name(:date) %></td>
     </tr>
   </thead>
@@ -16,7 +18,9 @@
       <tr>
         <td><%= link_to b.id, b %></td>
         <td><%= b.product.name %></td>
-        <td><%= b.amount %></td>
+        <td><%= b.amount_full %></td>
+        <td><%= b.amount_sample %></td>
+        <td><%= b.paid %></td>
         <td><%= b.date %></td>
       </tr>
     <% end %>

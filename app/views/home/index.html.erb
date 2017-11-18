@@ -1,25 +1,28 @@
 <h1>Inventory</h1>
 
-<table class="display" id="brews">
+<table class="display" id="home">
   <thead>
     <tr>
       <td>product</td>
-      <td>sold</td>
-      <td>brewed</td>
-      <td>total</td>
+      <td>sold full size</td>
+      <td>brewed full size</td>
+      <td>total full size</td>
+      <td>sold sample</td>
+      <td>brewed sample</td>
+      <td>total sample</td>
     </tr>
   </thead>
   <tbody>
     <% @brews.each do |b| %>
       <tr>
-        <td><%= b[:name] %></td>
-        <td><%= b[:brewed] %></td>
-        <td><%= b[:sold] %></td>
-        <td><%= b[:total] %></td>
+        <td><%= link_to b[:name], product_url(b[:id]) %></td>
+        <td><%= b[:brewed_full] %></td>
+        <td><%= b[:sold_full] %></td>
+        <td><%= b[:total_full] %></td>
+        <td><%= b[:brewed_sample] %></td>
+        <td><%= b[:sold_sample] %></td>
+        <td><%= b[:total_sample] %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-<%= link_to 'Products', products_path %>
-<%= link_to "Brews", brews_path %>
-<%= link_to 'Sales', sales_path %>

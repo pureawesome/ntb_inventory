@@ -30,7 +30,7 @@ class BrewsController < ApplicationController
 
   def brew_params
     brew_params ||= params[:brew]
-    brew_params ? brew_params.permit(:amount, :description, :product_id, :date) : {}
+    brew_params ? brew_params.permit(:amount_full, :amount_sample, :description, :product_id, :date) : {}
   end
 
   def build_brew

@@ -16,6 +16,9 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @brews = @product.brew.all.order('date DESC').limit(5)
+    @sales = @product.sale.all.where(paid: TRUE).order('date DESC').limit(5)
+    @frees = @product.sale.all.where(paid: FALSE).order('date DESC').limit(5)
   end
 
   def edit

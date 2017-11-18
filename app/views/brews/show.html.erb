@@ -5,8 +5,12 @@
   <%= @brew.product.name %>
 </p>
 <p>
-  <strong>Amount:</strong>
-  <%= @brew.amount %>
+  <strong>Amount Full:</strong>
+  <%= @brew.amount_full %>
+</p>
+<p>
+  <strong>Amount Sample:</strong>
+  <%= @brew.amount_sample %>
 </p>
 <p>
   <strong>Date:</strong>
@@ -17,5 +21,5 @@
   <%= @brew.description %>
 </p>
 
-<p><%= link_to('Edit Brew', edit_brew_path(@brew)) %></p>
-<p><%= link_to('All Brews', brews_path) %></p>
+<p><%= link_to('Edit Brew', edit_brew_path(@brew), class: "btn") %></p>
+<p><%= link_to('All Brews', brews_path, class: "btn") %></p>

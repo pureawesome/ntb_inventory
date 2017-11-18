@@ -9,6 +9,107 @@
   <strong>SKU:</strong>
   <%= @product.sku %>
 </p>
+<h3>recent brews</h3>
+<table class="display" id="brews">
+  <thead>
+    <tr>
+      <td>Brew ID</td>
+      <td>date</td>
+      <td>full size</td>
+      <td>sample</td>
+      <td>comments</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @brews.each do |b| %>
+      <tr>
+        <td>
+          <%= link_to b.id, b %>
+        </td>
+        <td>
+          <%= get_datetime(b.date) %>
+        </td>
+        <td>
+          <%= b.amount_full %>
+        </td>
+        <td>
+          <%= b.amount_sample %>
+        </td>
+        <td>
+          <%= b.description %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div class="divider">
 
-<p><%= link_to('Edit Product', edit_product_path(@product)) %></p>
-<p><%= link_to('All Products', products_path) %></p>
+</div>
+<h3>recent sales</h3>
+<table class="display" id="sales">
+  <thead>
+    <tr>
+      <td>Sale ID</td>
+      <td>date</td>
+      <td>full size</td>
+      <td>sample</td>
+      <td>comments</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @sales.each do |s| %>
+      <tr>
+        <td>
+          <%= link_to s.id, s %>
+        </td>
+        <td>
+          <%= get_datetime(s.date) %>
+        </td>
+        <td>
+          <%= s.amount_full %>
+        </td>
+        <td>
+          <%= s.amount_sample %>
+        </td>
+        <td>
+          <%= s.description %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<h3>recent giveaways</h3>
+<table class="display" id="sales">
+  <thead>
+    <tr>
+      <td>Sale ID</td>
+      <td>date</td>
+      <td>full size</td>
+      <td>sample</td>
+      <td>comments</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @frees.each do |s| %>
+      <tr>
+        <td>
+          <%= link_to s.id, s %>
+        </td>
+        <td>
+          <%= get_datetime(s.date) %>
+        </td>
+        <td>
+          <%= s.amount_full %>
+        </td>
+        <td>
+          <%= s.amount_sample %>
+        </td>
+        <td>
+          <%= s.description %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<p><%= link_to('Edit Product', edit_product_path(@product), class: "btn") %></p>
+<p><%= link_to('All Products', products_path, class: "btn") %></p>
