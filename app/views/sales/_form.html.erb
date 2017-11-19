@@ -6,17 +6,21 @@
       <%= f.select :product_id, Product.all.map {|p| [p.name, p.id]} %>
     </div>
     <div>
-      <%= f.label :amount_full %>
-      <%= f.number_field(:amount_full, in: 1.0..100.0, step: 1.0) %>
+      <%= f.label :quantity_full %>
+      <%= f.number_field(:quantity_full, in: 0.0..100.0, step: 1.0) %>
     </div>
     <div>
-      <%= f.label :amount_sample %>
-      <%= f.number_field(:amount_sample, in: 1.0..100.0, step: 1.0) %>
+      <%= f.label :quantity_sample %>
+      <%= f.number_field(:quantity_sample, in: 0.0..100.0, step: 1.0) %>
     </div>
     <p>
       <%= f.check_box :paid %>
       <%= f.label :paid %>
     </p>
+    <div>
+      <%= f.label :amount %>
+      <%= f.number_field(:amount, in: 0.0..1000.0, step: 1.0) %>
+    </div>
     <div>
       <%= f.label :date %>
       <%= f.datetime_field :date %>

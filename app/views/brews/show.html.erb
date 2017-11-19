@@ -5,16 +5,16 @@
   <%= @brew.product.name %>
 </p>
 <p>
-  <strong>Amount Full:</strong>
-  <%= @brew.amount_full %>
+  <strong>quantity Full:</strong>
+  <%= @brew.quantity_full %>
 </p>
 <p>
-  <strong>Amount Sample:</strong>
-  <%= @brew.amount_sample %>
+  <strong>quantity Sample:</strong>
+  <%= @brew.quantity_sample %>
 </p>
 <p>
   <strong>Date:</strong>
-  <%= @brew.date %>
+  <%= get_date(@brew.date) %>
 </p>
 <p>
   <strong>Comments:</strong>

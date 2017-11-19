@@ -7,8 +7,8 @@
     <tr>
       <td>ID</td>
       <td>Product</td>
-      <td><%= Brew.human_attribute_name(:amount_full) %></td>
-      <td><%= Brew.human_attribute_name(:amount_sample) %></td>
+      <td><%= Brew.human_attribute_name(:quantity_full) %></td>
+      <td><%= Brew.human_attribute_name(:quantity_sample) %></td>
       <td><%= Brew.human_attribute_name(:date) %></td>
     </tr>
   </thead>
@@ -17,9 +17,9 @@
       <tr>
         <td><%= link_to b.id, b %></td>
         <td><%= b.product.name %></td>
-        <td><%= b.amount_full %></td>
-        <td><%= b.amount_sample %></td>
-        <td><%= b.date %></td>
+        <td><%= b.quantity_full %></td>
+        <td><%= b.quantity_sample %></td>
+        <td><%= get_date(b.date) %></td>
       </tr>
     <% end %>
   </tbody>

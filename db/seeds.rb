@@ -20,8 +20,8 @@ end
 
 100.times do
   Brew.create(
-    amount_full: Faker::Number.number(2),
-    amount_sample: Faker::Number.number(1),
+    quantity_full: Faker::Number.number(2),
+    quantity_sample: Faker::Number.number(1),
     description: Faker::Company.catch_phrase,
     product_id: Product.order("RANDOM()").first.id,
     date: Faker::Date.between(1.year.ago, Date.today)
@@ -30,8 +30,9 @@ end
 
 100.times do
   Sale.create(
-    amount_full: Faker::Number.number(2),
-    amount_sample: Faker::Number.number(1),
+    quantity_full: Faker::Number.number(2),
+    quantity_sample: Faker::Number.number(1),
+    amount: Faker::Number.between(50, 1000),
     paid: Faker::Boolean.boolean(0.8),
     description: Faker::Company.catch_phrase,
     product_id: Product.order("RANDOM()").first.id,
