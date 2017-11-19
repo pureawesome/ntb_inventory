@@ -10,10 +10,10 @@ class HomeController < ApplicationController
   private
 
   def get_inventory(product)
-    brewed_f = get_brewed(product.id, :quantity_full)
-    sold_f = get_sold(product.id, :quantity_full)
-    brewed_s = get_brewed(product.id, :quantity_sample)
-    sold_s = get_sold(product.id, :quantity_sample)
+    brewed_f = get_brewed(product.id, :quantity_full) || 0
+    sold_f = get_sold(product.id, :quantity_full) || 0
+    brewed_s = get_brewed(product.id, :quantity_sample) || 0
+    sold_s = get_sold(product.id, :quantity_sample) || 0
     item = {
       name: product.name,
       id: product.id,
