@@ -30,7 +30,7 @@ class SalesController < ApplicationController
 
   def sale_params
     sale_params ||= params[:sale]
-    sale_params ? sale_params.permit(:quantity_full, :quantity_sample, :amount, :paid, :product_id, :date) : {}
+    sale_params ? sale_params.permit(:quantity_full, :quantity_sample, :amount, :paid, :product_id, :date, :description) : {}
   end
 
   def build_sale
